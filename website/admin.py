@@ -5,7 +5,7 @@ from django.utils.html import format_html, urlencode
 from django.utils.safestring import mark_safe
 
 from django.forms import TextInput, Textarea
-import locale
+# import locale
 
 
 @admin.register(Funcionario)
@@ -137,7 +137,11 @@ class ImovelAdmin(admin.ModelAdmin):
 
     
     def formatted_price(self, obj):
-        locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
-        valor = locale.currency(obj.preco, grouping=True, symbol=None)
-        return 'R${}'.format(valor)
+        return 'R${}'.format(obj.preco)
     formatted_price.short_description = 'Preço'
+
+    # def formatted_price(self, obj):
+    #     locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+    #     valor = locale.currency(obj.preco, grouping=True, symbol=None)
+    #     return 'R${}'.format(valor)
+    # formatted_price.short_description = 'Preço'

@@ -100,7 +100,6 @@ WSGI_APPLICATION = 'monthoya.wsgi.application'
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {    
     'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
         default='postgresql://db_monthoya_user:S7rA32KZhunKXH2m6BMHqBkpTeo4ZNLJ@dpg-cr8ugct6l47c73bp0ot0-a/db_monthoya',        
         conn_max_age=600
     )

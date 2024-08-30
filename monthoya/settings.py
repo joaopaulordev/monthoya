@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,12 +78,33 @@ WSGI_APPLICATION = 'monthoya.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# 2. Update the below python dict DATABASES
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "db_monthoya",
+        "USER": "joaopaulo",
+        "PASSWORD": "123@456#",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
+
+# # Replace the SQLite DATABASES configuration with PostgreSQL:
+# DATABASES = {    
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://db_teste_p67p_user:SYpZUWN4jA51P8FHNWJx4Q6JvUP1gX2c@dpg-cr8tj7qj1k6c73f900kg-a/db_teste_p67p',        
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation

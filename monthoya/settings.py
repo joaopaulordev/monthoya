@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xynlxo*%nt15apr(%x23#1$z9ruaf$@c8)7i@ebu&h#2&l@*l4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -86,25 +86,25 @@ WSGI_APPLICATION = 'monthoya.wsgi.application'
 # }
 
 # 2. Update the below python dict DATABASES
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "db_monthoya",
-        "USER": "joaopaulo",
-        "PASSWORD": "123@456#",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
-}
-
-# # Replace the SQLite DATABASES configuration with PostgreSQL:
-# DATABASES = {    
-#     'default': dj_database_url.config(
-#         # Replace this value with your local database's connection string.
-#         default='postgresql://db_teste_p67p_user:SYpZUWN4jA51P8FHNWJx4Q6JvUP1gX2c@dpg-cr8tj7qj1k6c73f900kg-a/db_teste_p67p',        
-#         conn_max_age=600
-#     )
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "db_monthoya",
+#         "USER": "joaopaulo",
+#         "PASSWORD": "123@456#",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
 # }
+
+# Replace the SQLite DATABASES configuration with PostgreSQL:
+DATABASES = {    
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgresql://db_monthoya_user:S7rA32KZhunKXH2m6BMHqBkpTeo4ZNLJ@dpg-cr8ugct6l47c73bp0ot0-a/db_monthoya',        
+        conn_max_age=600
+    )
+}
 
 
 # Password validation

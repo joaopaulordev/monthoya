@@ -4,7 +4,7 @@ from .models import *
 # Create your views hed
 def homepage(request):
     imoveis = Imovel.objects.filter(ativo=True).order_by('titulo')
-    imoveis_destaque = imoveis.filter(destaque=True).order_by("titulo")[0:3]
+    imoveis_destaque = imoveis.filter(destaque=True).order_by("titulo")[0:4]
     bairros = Bairro.objects.filter(isHomepage=True).order_by("descricao")  
             
     context = {"imoveis": imoveis, "imoveis_destaque": imoveis_destaque, "bairros": bairros}

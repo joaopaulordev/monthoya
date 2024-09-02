@@ -2,39 +2,72 @@
 {% load static %} 
 
 {% block body %}
-<h3>Home Page</h3>
-
-<h2>Imóveis em destaque</h2>
-{% for imovel in imoveis_destaque %}
-    <p>
-        <a href="{% url 'ver_imovel' imovel.id %}">
-            <img src="{{ imovel.thumbnail.url }}" width="300">
-        </a>        
-        <br>
-        Nome: {{ imovel.titulo }}
-        <br>
-        Preço: {{ imovel.preco }}
-    </p>
-{% endfor %} 
 
 
-<h2>Bairros</h2>
+<!-- {% include 'carrossel.html' %}  -->
+<img
+src="{% static 'Imagens/lotes-cascavel.jpg' %}"
+alt="Imagem 1 Desktop"
+/>
+
+<section class="banner-grid">        
+  <h2>Imóveis Em Destaque:</h2>    
+      
+  <div class="produtos">
+    <div class="produtos__grade">
+        {% for imovel in imoveis_destaque %}
+            <a
+                href="{% url 'ver_imovel' imovel.id %}"
+                class="produto"
+            >
+                <div class="produto__imagem">
+                <img
+                    src="{{ imovel.thumbnail.url }}"
+                    alt="Imagem do Produto"
+                />
+                </div>
+
+                <div class="produto__textos">
+                <p class="produto__titulo">{{ imovel.titulo }}</p>
+                <div class="produto__preco">
+                    <p class="produto__avista">R$ {{ imovel.preco }}</p>
+                    <p class="produto__parcelado">5x R$ 69<sup>,80</sup></p>
+                </div>
+                </div>
+            </a>
+        {% endfor %} 
+    </div>
+  </div>
+  <!-- <div>
+    <h2>Bairros</h2>
 {% for bairro in bairros %}
     <p>
         {{ bairro.descricao }}
     </p>
     {% for imovel in bairro.imovel_set.all %}
-        <p>
-            <a href="{% url 'ver_imovel' imovel.id %}">
-                <img src="{{ imovel.thumbnail.url }}" width="150">
-            </a>        
-            <br>
-            Nome: {{ imovel.titulo }}
-            <br>
-            Preço: {{ imovel.preco }}
-        </p>
+            <a
+            href="{% url 'ver_imovel' imovel.id %}"
+            class="produto"
+        >
+            <div class="produto__imagem">
+            <img
+                src="{{ imovel.thumbnail.url }}" width="150"
+                alt="Imagem do Produto"
+            />
+            </div>
+
+            <div class="produto__textos">
+            <p class="produto__titulo">{{ imovel.titulo }}</p>
+            <div class="produto__preco">
+                <p class="produto__avista">R$ {{ imovel.preco }}</p>
+                <p class="produto__parcelado">5x R$ 69<sup>,80</sup></p>
+            </div>
+            </div>
+        </a>
     {% endfor %} 
 {% endfor %} 
+  </div> -->
+</section>
 
 {% endblock %}
 

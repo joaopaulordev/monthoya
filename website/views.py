@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 
-# Create your views here.
+# Create your views hed
 def homepage(request):
     imoveis = Imovel.objects.filter(ativo=True).order_by('titulo')
     imoveis_destaque = imoveis.filter(destaque=True).order_by("titulo")[0:3]

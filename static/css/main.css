@@ -208,10 +208,6 @@ img {
     border-width: 0;
     margin: 0 2rem 2rem 2rem;
   }
-  .cabecalho__link::after {
-    content: "❯";
-    transform: rotate(90deg);
-  }
   .cabecalho__link--tipo {
     margin-left: 0;
   }

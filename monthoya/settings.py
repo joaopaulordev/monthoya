@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'monthoya.wsgi.application'
 # }
 
 # 2. Update the below python dict DATABASES
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "db_monthoya",
-#         "USER": "joaopaulo",
-#         "PASSWORD": "123@456#",
-#         "HOST": "127.0.0.1",
-#         "PORT": "5432",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "db_monthoya",
+        "USER": "joaopaulo",
+        "PASSWORD": "123@456#",
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
+    }
+}
 
 # Replace the SQLite DATABASES configuration with PostgreSQL:
-DATABASES = {    
-    'default': dj_database_url.config(
-        default='postgresql://banco_monthoya_user:kI0iLZYGu6iu9QndyeTHBkvlhcJhkvDy@dpg-crarbv2j1k6c73cjm4vg-a/banco_monthoya',        
-        conn_max_age=600
-    )
-}
+# DATABASES = {    
+#     'default': dj_database_url.config(
+#         default='postgresql://banco_monthoya_user:kI0iLZYGu6iu9QndyeTHBkvlhcJhkvDy@dpg-crarbv2j1k6c73cjm4vg-a/banco_monthoya',        
+#         conn_max_age=600
+#     )
+# }
 
 
 # Password validation
